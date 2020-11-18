@@ -51,7 +51,7 @@ Images
 - **Checkpoint**
 - **Palo Alto**
 
-[Les différentes marques de Firewall sur le marché](https://github.com/GabrielClmcn/Ydays-Labo-Infra-2020/blob/master/Cours/2_confirme/1_Firewall/image/gartner-firewall.png)
+![Les différentes marques de Firewall sur le marché](https://github.com/GabrielClmcn/Ydays-Labo-Infra-2020/blob/master/Cours/2_confirme/1_Firewall/image/gartner-firewall.png)
 
 ## 4. Les types
 > Rappel définition : une appliance est un appareil informatique généralement discret, spécifiquement conçu pour exécuter un logiciel destiné à fournir une ressource informatique distincte.
