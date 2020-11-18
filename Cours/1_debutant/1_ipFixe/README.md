@@ -6,27 +6,27 @@ Masque de sous-réseau calcul
 
 ## Sommaire
 
-- [Internet Protocol](##Internet-Protocol)
+- [Internet Protocol](#IP)
   - [2 versions](#2-versions)
-    - [IPv4](#3-types-d'adresses)
-    - [Ipv6](#3-types-d'adresses)
-  - [3 types d'adresses](#2-types-d'adresses)
-    - [Publique](#3-types-d'adresses)
-    - [Privé](#3-types-d'adresses)
-    - [Adresses](#3-types-d'adresses)
-- [Les différents composants d'un adressage IP](2.---Les-différents-composants-d-un-adressage-IP)
-  - [L'adresse de réseau](##1.---Internet-Protocol)
-  - [L'adresse de broadcast](##1.---Internet-Protocol)
-  - [Masque de sous-réseau](##1.---Internet-Protocol)
-    - [Notation CIDR](##1.---Internet-Protocol)
-  - [Adresses utilisables](##1.---Internet-Protocol)
-  - [Adresses disponibles](##1.---Internet-Protocol)
-- [Comment créer son premier réseau](##1.---Internet-Protocol)
-  - [Méthode de calcul](##1.---Internet-Protocol)
-    - [Adresse de réseau](##1.---Internet-Protocol)
-    - [Adresse de broadsact](##1.---Internet-Protocol)
-    - [Adresses utilisables](##1.---Internet-Protocol)
-    - [Adresses disponibles](##1.---Internet-Protocol)
+    - [IPv4](#IPv4)
+    - [IPv6](#IPv6)
+  - [3 types d'adresses](#3-types-d'adresses)
+    - [Publique](#Publique)
+    - [Privé](#Privé)
+    - [Adresses](#Adresses)
+- [Les différents composants d'un adressage IP](#Les-différents-composants-dun-adressage-IP)
+  - [L'adresse de réseau](##Ladresse-de-réseau)
+  - [L'adresse de broadcast](#Ladresse-de-broadcast)
+  - [Masque de sous-réseau](#Masque-de-sous-réseau)
+    - [Notation CIDR](#Notation-CIDR)
+  - [Adresses utilisables](#Adresses-utilisables)
+  - [Adresses disponibles](#Adresses-disponibles)
+- [Comment créer son premier réseau](#Comment-créer-son-premier-réseau)
+  - [Méthode de calcul](#Méthode-de-calcul)
+    - [Adresse de réseau](#Adresse-de-réseau)
+    - [Adresse de broadsact](#Adresse-de-broadsact)
+    - [Adresses utilisables](#Adresses-utilisables)
+    - [Adresses disponibles](#Adresses-disponibles)
 
 ---
 
@@ -100,7 +100,7 @@ Les adresses réseaux suivants sont des adresses utilisés pour de l'adressage p
 
 Cette adresse vous permet d'effectuer des essais ou de démarrer des applications localement sur votre propre machine.
 
-## Les différents partie d'un adressage IP
+## Les différents composants d'un adressage IP
 
 ### L'adresse de réseau
 
