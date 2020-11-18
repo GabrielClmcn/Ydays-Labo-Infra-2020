@@ -15,8 +15,11 @@ Images
 
 ## 1. Définitions
 **`UTM`** : **U**nified **T**hreat **M**anagement
+
 **`NGFW`** : **N**ext **G**eneration **F**ire**W**all
+
 **`USG`** : **U**nified **S**ecurity **G**ateway
+
 > Ces 3 termes désignent la même chose : Un firewall "amélioré". En outre, le fait d'être un pare-feu traditionnel, on cite généralement ces fonctionnalité associés, le filtrage anti-spam, un logiciel antivirus, un système de détection ou de prévention d'intrusion (IDS ou IPS), et un filtrage de contenu applicatif (filtrage URL).
 
 **`NAT`** : **N**etwork **T**ranslation **A**ddress, permet a des adresses privées de communiquer avec extérieur en utilisant des adresses IP Public. L'avantage est de limiter l'utilisation des adresse IP public. D'autre part cela permet de masquer le réseau Local au reste du monde
