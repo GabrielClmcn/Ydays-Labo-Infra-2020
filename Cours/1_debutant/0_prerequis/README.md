@@ -2,9 +2,9 @@
 
 ## Sommaire
 
-- [Mémos](##Mémos)
-- [Lexique](##Lexique)
-- [Markdown](##Markdown)
+- [Mémos](#Mémos)
+- [Lexique](#Lexique)
+- [Markdown](#Markdown)
 
 ---
 
