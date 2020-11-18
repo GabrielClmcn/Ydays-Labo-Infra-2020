@@ -1,254 +1,308 @@
-# 1 L'adressage IP
+# Cours n°1 : L'adressage IP
+
+ToDo: Sommaire  
+Pré-requis  
+Masque de sous-réseau calcul
 
 ## Sommaire
 
-- **Internet Protocol**
-  - **[2 versions](#2-versions)**
-    - IPv4
-    - Ipv6
-  - **[3 types d'addresses](#2-types-daddresses)**
-    - Publique
-    - Privé
-    - Localhost
-- **Masque de sous-réseaux**
-  - **[Quésaco ?](#quésaco-)**
-  - Notation CIDR
-  - **[Calcul de division en sous-réseau](#Calcul-de-division-en-sous-réseau)**
-- **Adresse réseau**
-  - **[Calcul d'une adresse réseau](#calcul-dune-adresse-réseau)**
-- **Adresse de broadcast**
-  - **[Quésaco encore ?](#quésaco-encore-)**
-  - **[Calcul d'une adresse de broadcast](#calcul-dune-adresse-de-broadcast)**
-- adresses utilisables
-  - **[Calcul de la 1ère et dernière adresse disponible du réseau](#calcul-de-la-1ère-et-dernière-adresse-disponible-du-réseau)**
-- adresses disponibles
-  - **[Calcul du nombre total d'adresse et d'adresse disponible](#calcul-du-nombre-total-dadresse-et-dadresse-disponible)**
-
-- **Pré-requis**
-  - **[Calculer en binaire](#calculer-en-binaire)**
-  - **[Méthode de conversion d'une ip en binaire](#méthode-de-conversion-dune-ip-en-binaire)**
+- [Internet Protocol](##Internet-Protocol)
+  - [2 versions](#2-versions)
+    - [IPv4](#3-types-d'adresses)
+    - [Ipv6](#3-types-d'adresses)
+  - [3 types d'adresses](#2-types-d'adresses)
+    - [Publique](#3-types-d'adresses)
+    - [Privé](#3-types-d'adresses)
+    - [Adresses](#3-types-d'adresses)
+- [Les différents composants d'un adressage IP](2.---Les-différents-composants-d-un-adressage-IP)
+  - [L'adresse de réseau](##1.---Internet-Protocol)
+  - [L'adresse de broadcast](##1.---Internet-Protocol)
+  - [Masque de sous-réseau](##1.---Internet-Protocol)
+    - [Notation CIDR](##1.---Internet-Protocol)
+  - [Adresses utilisables](##1.---Internet-Protocol)
+  - [Adresses disponibles](##1.---Internet-Protocol)
+- [Comment créer son premier réseau](##1.---Internet-Protocol)
+  - [Méthode de calcul](##1.---Internet-Protocol)
+    - [Adresse de réseau](##1.---Internet-Protocol)
+    - [Adresse de broadsact](##1.---Internet-Protocol)
+    - [Adresses utilisables](##1.---Internet-Protocol)
+    - [Adresses disponibles](##1.---Internet-Protocol)
 
 ---
 
 ## Pré-requis
 
-### Calculer en binaire
+- [ET Logique (AND)](##1.---Internet-Protocol)
+- [OU logique (OR)](##1.---Internet-Protocol)
 
-1 + 1 = 1  
-1 + 0 = 0  
-0 + 1 = 0  
-0 + 0 = 0  
+## IP
 
-### Méthode de conversion d'une ip en binaire
+Quel est son utilité et par quoi est-ce utilisé ?
 
-**Ip =** 192.168.0.1
-**Bit =** 0 ou 1
-**Octet =** Suite de huit 0 et/ou 1 ( ou dans sa forme non-binaire exemple: 192)
+> L'adresse IP est l'abréviation d'Internet Protocol un identifiant permanant (statique) ou provisoir (dynamique) attribué à un équipement réseau se trouvant sur la couche 3 du modèle OSI.
 
-- Chaque adresse ip se compose de 32 bits.
-- Composé en 4 parties, equivalentes à 1 octet chacune.
+Une adresse IP est attribué à une interface réseau possédant une `adresse physique` (Adresse MAC).
 
-#### Pour convertir une ip en binaire il faut calculer les octets l'un après l'autre, en utilisant le tableau ci-dessous.
-
-- :warning: Ce processus s'effectue un octet après l'autre. :warning: 
-- Un octet est égale à la somme de certains des nombres du tableau.
-- Soustraire le premier nombre du tableau avec notre octet, si le résultat est inférieur à 0, inscrivez un 0 puis passé au nombre suivant. Si le résultat est positif, inscrivez un 1 puis passer aux nombres suivant et répéter l'opération **avec le reste de la soustraction**.
-- Une fois que **le reste est = 0**, tous les nombres suivant du tableau seront des 0.
-
-|128|64 |32 |16 | 8 | 4 | 2 | 1 |
-|---|---|---|---|---|---|---|---|
-|   |   |   |   |   |   |   |   |
-
-#### Exemple pour 192 et 168
-
-192 = 128 + 64
-
-|128|64 |32 |16 | 8 | 4 | 2 | 1 |
-|---|---|---|---|---|---|---|---|
-| 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
-
-168 = 128 + 32 + 8
-
-|128|64 |32 |16 | 8 | 4 | 2 | 1 |
-|---|---|---|---|---|---|---|---|
-| 1 | 0 | 1 | 0 | 1 | 0 | 0 | 0 |
-
-#### Résultat :
-192.168 = 11000000.10101000
-
----
-## Ip = Internet Protocol
 ### 2 versions
 
-#### IPv4 
-* Représenté par une série de **4 octets** sous forme de nombres entiers, allant **de 0 à 255**, séparé par des points. Pour un total de **32 bits**.
-    * **Exemple :** 123.456.0.89
+L'adresse IP possède deux versions utilisées aujourd'hui.  
+L'`IPv4` et l'`IPv6`. L'ensemble de ce cours portera sur l'`IPv4`, l'`IPv6` est abordé de façon très bref.
 
-* On peut la décomposé en 2 partie :
-    * La partie réseau commune à tous les hôtes d'un même réseau.
-    **Exemple :** 123.456.0.\_\_ 
-*(ou 123.456.\_\_.\_\_ selon le nombre d'adresses disponibles dans le réseau)*
+#### IPv4
 
-    * La partie hôte, unique à l'intérieur d'un même réseau.
-    **Exemple :** \_\_.\_\_.\_\_.89 
-*(ou \_\_.\_\_.1.89 selon le nombre d'adresses disponibles dans le réseau)*
+L'IPv4 est une représentation décimal de 0 à 255 séparer par des points (4*8 bits)
+
+Exemple :
+
+`192.168.1.47` est une adresse IPv4 en `notation décimal`.
+
+L'IPv4 peut se découper en deux partie. La partie `réseau` et la partie `hôte`.
+
+La partie `réseau` est **commune** à tous les hôtes d'un même réseau. Cette partie de l'adresse IP est définie par le masque de sous réseau que nous définissons.
+
+Exemple d'une partie `réseau` :  
+192.168.0.\_\_ /24
+
+La partie `hôte` est **unique** à l'intérieur d'un même réseau.
+
+Exemple `hôte`:
+\_\_.\_\_.10.89 /16
 
 #### IPv6
-* Représenté par une série de **8x 2octets** en héxadécimal, séparé par des deux-points. Pour un total de **128 bits**.
-    * **Exemple :** 2001:0db8:0000:85a3:0000:0000:ac1f:8001 (ou 2001:db8:0:85a3:0:0:ac1f:8001)
 
+L'IPv6 est une représentation en hexadécimal séparé par deux-points (16 * 8 bits)
 
-### 2 types d'addresses
+Exemple :
 
-#### Adresse publique : 
-* Unique dans le monde, elle permet d'être identifié sur internet.
-    * **Exemple d'IPv4:** 77.210.126.42
+`2001:0db8:0000:85a3:0000:0000:ac1f:8001` est une adresse IPv6 en `notation hexadécimal`
 
-#### Adresse privée :
-* Unique dans son réseau, elle n'est utilisée que dans des réseaux privés.
-    * **Exemple d'IPv4 :** 192.168.0.1 - 10.0.0.0 - 172.16.0.0
+## 3 types d'adresses
 
----
+### Publique
 
-## Masque de sous-réseaux
-### Quésaco ?
+Une adresse publique est unique dans le monde.
 
-**192.168.0.1/20**
-**Ip** = 192.168.0.1
-**Masque (CIRD)** = /20
-**Masque** = 255.255.240.0
+Vous pouvez tapez pour exemple l'adresse IP `216.58.213.142` sur votre barre URL de votre navigateur afin d'aller sur le site web [www.google.com](https://www.google.com)
 
-Composé lui aussi de **32 bits**, il permet de spécifier **le nombre d'ip disponibles** dans le réseaux.
+### Privée
 
-Le masque sous la forme de **"notion CIRD"** correspondant **au nombre de bits à l'état 1**, dans son écriture binaire.
-**Exemple : /20 = 255.255.240.0 = 1111 1111.1111 1111.1111 0000.0000 0000**
+Une adresse privée est unique dans un réseau local.
 
-**``
-A savoir : Le 1er octet doit être supérieur ou égale au 2nd, qui lui même doit être   supérieur ou égale au 3ème, et ainsi de suite...
-``**
+Les adresses réseaux suivants sont des adresses utilisés pour de l'adressage privée. Ces adresses réseaux sont définies par la RFC 1918.
 
----
+10.0.0.0/8  
+172.16.0.0/16  
+192.168.0.0/24  
 
-## Adresse réseau
-### Calcul d'une adresse réseau
+### Spécial
 
-**192.168.0.25/20**
-**/20 =** 255.255.240.0
+127.0.0.0/8 est votre adresse de bouclage, autrement appeler `localhost`.
 
-- Mettre en rapport l'ip et le masque.
+Cette adresse vous permet d'effectuer des essais ou de démarrer des applications localement sur votre propre machine.
 
->192.168.0.25
-255.255.240.0
+## Les différents partie d'un adressage IP
 
+### L'adresse de réseau
 
-**````Astuce :````
-````x + 255 = x````
-````x + 0 = 0````
-````x + y = ?````**
+La première adresse IP d'un réseau. Elle est inutilisable. Sa fonction est d'identifier le réseau.
 
-- Rechercher le/les inconnu.s (un octet après l'autre).
+### L'adresse de broadcast
 
->192.168.0.25
-255.255.240.0
-**= 192.168.?.0**
-
-- Mettre en corrélation l'octet de l'ip et l'octet du masque dont le résultat est inconnu puis  calculer la différence.
-
->240 = 1111 0000
->0 = 0000 0000
->**= 0000 0000 = 0**
-
-
-:arrow_right: **L'adresse réseau est donc 192.168.0.0**
+Egalement appellé adresse de diffusion elle est la dernière adresse IP d'un réseau. Elle est inutilisable. Sa fonction est d'envoyer des paquets à tous les membres de son même réseau sans distinction et sans diffuser les informations de ses récepteur sur le réseau.
 
 ---
 
-## Adresse de broadcast
-### Quésaco encore ?
+> Les autres adresses permettent à identifier des machines connectées au réseau.
 
-L'adresse de broadcast ou adresse de diffusion, est la dernière adresse d'un réseau ou d'un sous-réseau. Elle permet de vérifier la bonne communication entre tout les participants d'un réseau ou d'un sous-réseau, en leur envoyant des paquets.
+### Masque de sous-réseau
 
-### Calcul d'une adresse de broadcast
+Il défini la partie hôte de notre réseau mais également de diviser notre réseau.
 
-**Ip :** 192.168.0.25/20
-**Adresse réseau :** 192.168.0.0
-**Masque /20 :** 255.255.240.0
+Voici quelques exemples de masque de sous-réseau :
 
-- Tous les bits à 0 dans le masque, passe à 1 dans l'adresse de réseau.
+255.0.0.0 ou /8
+255.255.0.0 ou /16
+255.255.255.0 ou /24
+255.255.255.252 ou /30
 
->255.255.240.0 = 1111 1111.1111 1111.1111 0000.0000 0000
->192.168.0.0 = 1100 0000.1010 1000.0000 0000.0000 0000
->**Résultat = 1100 0000.1010 1000.0000 1111.1111 1111**
+#### Notation CIDR
 
-:arrow_right: **L'adresse de broadcast est donc 192.168.15.255**
+Cette notation CIDR est une seconde manière d'écrire le masque de sous-réseau **plus rapide** et **plus simple à lire**. Il indique le nombre de bits à l'état 1.
+
+Exemples :
+
+255.0.0.0 ou /8  
+1111 1111.0000 0000.0000 0000.0000 0000  
+
+Nombres de bits à l'état 1 : 8
+>La notation CIDR de 255.0.0.0 est donc /8
+
+255.255.0.0 ou /16  
+1111 1111.1111 1111.0000 0000.0000 0000  
+
+Nombres de bits à l'état 1 : 16
+>La notation CIDR de 255.255.0.0 est donc /16
+
+255.255.255.0 ou /24  
+1111 1111.1111 1111.1111 1111.0000 0000  
+
+Nombres de bits à l'état 1 : 24
+>La notation CIDR de 255.255.255.0 est donc /24
+
+## Comment créer son adressage réseau IPv4
+
+Afin de créer son adressage réseau il est nécessaire d'avoir :
+
+- Une adresse réseau `privée`
+- Un masque de sous-réseau
+
+Rien d'autre ? Enfaite si, il est plutôt utile de savoir certaines choses comme  comment connaître son adresse de réseau à partir d'une adresse IP, son adresse de broadcast, le nombre d'adresse utilisable...  
+
+Pour ça, il faut regarder juste en dessous.
+
+Il est important de savoir aussi qu'un réseau ça évolue alors il est préférable de prévoir une marge et de ne pas utiliser le nombre fixe d'adresse dont vous avez besoin au moment précis.
+
+### Méthode de calcul
+
+Nécessite de connaître et comprendre la conversion `binaire` vers `décimal` et `décimal` vers `binaire`.  
+Afin de vous aider voici un tableau à utiliser :
+
+| 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+|-----|----|----|----|---|---|---|---|
+|     |    |    |    |   |   |   |   |
+
+Exemples :
+
+Donner l'adresse IP suivante en binaire :
+
+10.65.0.3
+
+| 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+|-----|----|----|----|---|---|---|---|
+| 0   | 0  | 0  | 0  | 1 | 0 | 1 | 0 |
+> 10
+
+| 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+|-----|----|----|----|---|---|---|---|
+| 0   | 1  | 0  | 0  | 0 | 0 | 0 | 1 |
+> 65
+
+| 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+|-----|----|----|----|---|---|---|---|
+| 0   | 0  | 0  | 0  | 0 | 0 | 0 | 0 |
+> 0
+
+| 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+|-----|----|----|----|---|---|---|---|
+| 0   | 0  | 0  | 0  | 0 | 0 | 1 | 1 |
+> 3
+
+Résultat :
+
+> 0000 1010.0100 0001.0000 0000.0000 0011
+
+Donner l'adresse IP suivante en décimal :
+
+1100 0000.1010 1000.0001 0100.1111 1110
+
+| 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+|-----|----|----|----|---|---|---|---|
+| 1   | 1  | 0  | 0  | 0 | 0 | 0 | 0 |
+> 192
+
+| 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+|-----|----|----|----|---|---|---|---|
+| 1   | 0  | 1  | 0  | 1 | 0 | 0 | 0 |
+> 168
+
+| 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+|-----|----|----|----|---|---|---|---|
+| 0   | 0  | 0  | 1  | 0 | 1 | 0 | 0 |
+> 20
+
+| 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+|-----|----|----|----|---|---|---|---|
+| 1   | 1  | 1  | 1  | 1 | 1 | 1 | 0 |
+> 254
+
+Résultat :
+> 192.168.20.254
+
+Vous avez compris ? Non ? Rien de plus simple, il suffit d'additioner les valeurs où se situe les bits à l'état 1.  
+> 8 + 2 = 10  
+64 + 1 = 65  
+128 + 32 + 8 = 168  
+128 + 64 + 32 + 16 + 8 + 4 + 2 = 254  
+etc...
+
+C'est plus clair maintenant ? Vous êtes donc prêt pour un lire la suite et un bon exercice d'entrainement avant le TP 😊
+
+#### Adresse de réseau
+
+Afin de connaître notre adresse de réseau il est nécesaire de connaître une adresse IP et son masque de sous réseau.  
+Utilisation du `ET logique (AND)` nécessaire afin d'obtenir le résultat.
+
+Exemple :
+
+192.168.1.47/24  
+
+|                                  |                                             |
+|----------------------------------|---------------------------------------------|
+| Adresse IP en binaire | 1100 0000.1010 1000.0000 0001.0010 1111                |
+| Masque de sous-réseau en binaire | 1111 1111.1111 1111.1111 1111.0000 0000     |
+| Adresse de réseau en binaire     | 1100 0000.1010 1000.0000 0001.0000 0000     |
+| Adresse de réseau en décimal     | 192.168.1.0                                 |
+
+Résultat :
+
+> 192.168.1.0
+
+#### Adresse de Broadcast
+
+Nécessite l'adresse réseau en binaire.
+Utilisation du `OU logique (OR)` nécessaire afin d'obtenir le résultat.  
+
+De manière plus simple il vous faut placer la **partie hôte** de cette adresse à une valeur de bits à l'état 1 pour récupérer l'adresse de broadcast.
+
+Exemple :
+
+192.168.1.0/24
+
+|                                  |                                         |
+|----------------------------------|-----------------------------------------|
+| Adresse de réseau en binaire     | 1100 0000.1010 1000.0000 0001.0000 0000 |
+| Adresse de broadcast en binaire  | 1100 0000.1010 1000.0000 0001.1111 1111 |
+| Adresse de broadcast en décimal  | 192.168.1.255                           |
+
+Résultat :
+
+> 192.168.1.255
+
+#### Adresses utilisables
+
+Le nombre d'adresse utilisable dans votre réseau s'obtient à l'aide de 2 puissance le chiffre/nombre de bits à l'état `0` de votre masque de sous réseau.
+
+Exemples :
+
+10.0.0.0/8 soit 2^24 = 16 777 216 adresses utilisables
+172.16.0.0/16 soit 2^16 = 65 536 adresses utilisables
+192.168.1.0/24 soit 2^8 = 256 adresses utilisables  
+
+#### Adresses disponibles
+
+Le nombre d'adresses disponibles est le résultat du nombre d'adresses utilisable - 2.
+
+Pourquoi le nombre d'adresses utilisable - 2 ?
+
+`L'adresse de réseau` et `l'adresse de broadcast` sont tout simplement  **inutilisable**, elles ne sont pas attribuable à un équipement réseau et donc `non-disponible`.  
+D'où la subtilité des mots `utilisables` et `disponibles`.
+
+Exemples :
+
+10.0.0.0/8 soit 2^24 - 2 = 16 777 214 adresses disponible  
+172.16.0.0/16 soit 2^16 - 2 = 65 534 adresses disponible  
+192.168.1.0/24 soit 2^8 - 2 = 254 adresses disponible
 
 ---
-## Divers calculs
-### Calcul de la 1ère et dernière adresse disponible du réseau
 
-**Ip :** 192.168.0.25/20
-**Adresse réseau :** 192.168.0.0
-**Adresse de broadcast :** 192.168.15.255
-
-- L'adresse de réseau et de broadcast ne sont pas disponible.
-- L'adresse de réseau étant la première adresse du réseau, la première adresse disponible dans le réseau sera -> **adresse réseau + 1**.
-- L'adresse de broadcast étant la dernière adresse du réseau, la dernière adresse disponible dans le réseau sera -> **adresse de broadcast - 1**.
-
-:arrow_right: **1ère adresse disponible = 192.168.0.1**
-:arrow_right: **Dernière adresse disponible = 192.168.15.254**
-
----
-### Calcul du nombre total d'adresse et d'adresse disponible
-
-**Masque :** /20 = 255.255.240.0 = 1111 1111.1111 1111.1111 0000.0000 0000
-
-- Le nombre total d'adresse dans le réseau correspond à 2^ le nombre de 0 dans le masque, dans sa forme binaire.
-
->Il y a 12x 0 dans un masque /20
->**2^12 = 4096 adresses au total**
-
-- Le nombre d'adresse disponible dans le réseau correspond au nombre total d'adresse dans le réseau -2. Puis que l'on retire l'adresse de réseau et de broadcast.
-
->**4096 - 2 = 4094 adresses disponibles**
-
----
-
-### Calcul de division en sous-réseau
-
-**Adresse réseau :** 192.168.0.0/24
-**Adresse de broadcast :** 192.168.0.255
-**Masque /24 :** 255.255.255.0
-
-#### Comment diviser ce réseau en 4 ?
-
-- En mettant en corrélation l'adresse réseau et l'adresse de broadcast, nous pouvons constater que la partie hôte de se réseau ne se concentre que sur le 4ème octet de l'adresse.
-*(pour plus de clarté cet octet est représenté sous sa forme binaire)*
-
->192.168.0.**0000 0000**
-
-- Afin de diviser en 4 ce réseau nous modifirons les 2 premiers bits de cet octet, en utilisant des combinaisons binaires.
-
->**Exemple :** **00**00 0000; **01**00 0000; **10**00 0000; **11**00 0000
->*(00; 01; 10; 11)*
-
-- En ajoutant ces combinaisons nous obtenons 4 plages de sous-réseau, contenant des adresses disponibles, borner chacune par son adresse de sous-réseau et de broadcast.
-
->192.168.0.**00**00 0000 -> 192.168.0.**01**00 0000 -> 192.168.0.**10**00 0000 -> 192.168.0.**11**00 0000
-
-***La 1ère plage allant de :***
->192.168.0.**00**00 0000 -> 192.168.0.**01**00 0000
-192.168.0.**0** -> 192.168.0.**64 - 1**
-192.168.0.**0** -> 192.168.0.**63**
-(Adresse de réseau) -> (Adresse de broadcast)
-
-***La 2ème plage allant de :***
->192.168.0.**01**00 0000 -> 192.168.0.**10**00 0000
-192.168.0.**64** -> 192.168.0.**128 - 1**
-192.168.0.**64** -> 192.168.0.**126**
-(Adresse de réseau) -> (Adresse de broadcast)
-
-***Et ainsi de suite jusqu'à la dernière adresse possible avec ce masque.***
-
-**``
-Si nous avions voulu diviser ce réseau en 5, nous aurions utiliser 3 bits, mais nous aurions perdu des adresses disponibles.
-``**
+Enjoy 🎉
