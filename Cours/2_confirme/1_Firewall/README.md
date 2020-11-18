@@ -29,8 +29,11 @@ Images
 	- NAT Pool
 
 **`SNAT`** : **S**ource **NAT**, change l'adresse IP source des paquets de la communication
+
 **`DNAT`** : **D**estination **NAT**, change l'adresse IP destination des paquets de la communication
+
 **`PAT`** : **P**ort **A**ddress **T**ranslation, permet d'associer de façon statique/fixe (et non pas dynamique comme dans le NAT de base) un port TCP ou UDP sur l'interface du routeur côté Internet à un hôte interne à partir du couple d'informations : adresse IP et port TCP/UDP.
+
 **`VPN`** : **V**irtual **P**rivate **N**etwork
 - **`VPN SSL`** : Préféré pour les connexions Client à Site. Utilise SSL. Peut s'utiliser en Clientless
 - **`VPN IPSEC`** : Préféré pour les connexions Sites à Sites. Utilise IKE. Nécessite des clients particuliers
@@ -48,7 +51,7 @@ Images
 - **Checkpoint**
 - **Palo Alto**
 
-Image Gartner
+[Les différentes marques de Firewall sur le marché](https://github.com/GabrielClmcn/Ydays-Labo-Infra-2020/blob/master/Cours/2_confirme/1_Firewall/image/gartner-firewall.png)
 
 ## 4. Les types
 > Rappel définition : une appliance est un appareil informatique généralement discret, spécifiquement conçu pour exécuter un logiciel destiné à fournir une ressource informatique distincte.
