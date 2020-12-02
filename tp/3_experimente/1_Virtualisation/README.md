@@ -14,16 +14,16 @@ Toutes les machines dans le même réseau.
 
 1. Trouver les prérequis hardware pour installer un Esxi.
 2. Installer l'esxi dans VMware Workstation
-  - Mettez les ressources nécessaires pour faire tourner les VM que l'on va migrer. 
+    - Mettez les ressources nécessaires pour faire tourner les VM que l'on va migrer. 
 4. Suivez les instructions suivantes :
-  - Avoir une IP statique
-  - Insérer la licence
-  - Ajouter un datastore (assez gros pour héberger quelques VM)
+    - Avoir une IP statique
+    - Insérer la licence
+    - Ajouter un datastore (assez gros pour héberger quelques VM)
 
 ## 2. Utilisation de VMware vCenter Converter Standalone (mode local)
 
 1. Crée une VM Windows Server (Client si pas de ressource).
-  - Assurer vous que les 2 machines se ping.
+    - Assurer vous que les 2 machines se ping.
 2. Installer vCenter Converter en mode local sur cette VM.
 3. Utiliser la solution pour migrer la VM dans l'esxi.
 4. Vérifier que la VM fonctionne bien dans votre ESXI
