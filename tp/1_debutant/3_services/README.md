@@ -74,7 +74,7 @@ Votre infrastructure se composera de **trois serveurs** et de **deux clients**.
 - 👀 Réaliser la configuration du service, fournissez nous en copiant collant le contenu des fichiers de conf ci-dessous :
 
 `/etc/sysconfig/dhcpd/dhcpd.conf`  
-`/etc/dhcp/dhcpd.conf`
+`/etc/dhcp`
 
 - Récupérer une adresse IP à l'aide de votre serveur `DHCP` respectivement sur vos deux machines clientes.
 
