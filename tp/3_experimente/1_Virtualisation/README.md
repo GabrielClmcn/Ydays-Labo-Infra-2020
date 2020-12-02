@@ -32,7 +32,7 @@ Toutes les machines dans le même réseau.
 ## 3. Utilisation de VMware vCenter Converter Standalone (mode Client-Server)
 
 1. Crée une VM Linux.
-2. Installer vCenter Converter sur votre PC pour le Windows migrer précédemment en mode client-serveur.
+2. Installer vCenter Converter sur votre PC ou sur le Windows migrer précédemment, en mode client-serveur.
 3. Utiliser le pour migrer le serveur linux sur l'esxi.
 4. Vérifier que la VM fonctionne bien dans votre ESXI
 
