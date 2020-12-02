@@ -3,10 +3,11 @@
 Objectif : Virtualiser une machine physique sur un ESXi.
 
 Prérequis : VMware Workstation
+
 3 VM :
-- 1 esxi
-- 1 VM Windows
-- 1 VM Linux
+    - 1 esxi
+    - 1 VM Windows
+    - 1 VM Linux
 
 Toutes les machines dans le même réseau. 
 
