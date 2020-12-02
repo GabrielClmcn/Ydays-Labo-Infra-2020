@@ -21,7 +21,7 @@
 
 - [TP 1 : title](./1_debutant/1_tpName/)
 - [TP 2 : title](./1_debutant/2_tpName/)
-- [TP 3 : title](./1_debutant/3_tpName/)
+- [TP 3 : services](./1_debutant/3_services/)
 - [TP 4 : title](./1_debutant/4_tpName/)
 - [TP 5 : title](./1_debutant/5_tpName/)
 
