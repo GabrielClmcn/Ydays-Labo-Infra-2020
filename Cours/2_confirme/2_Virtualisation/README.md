@@ -1,8 +1,15 @@
 # La virtualisation
-- [I. Qu'est ce que la virtualisation ?](#i-Qu%27est%20ce%20que%20la%20virtualisation%20%3F)
-- [II. Pourquoi virtualiser ?](#ii-Pourquoi%20virtualiser%20%3F)
-- [III. Comment ça fonctionne ?](#iii-Comment%20%C3%A7a%20fonctionne%20%3F)
-- [IV. Les types de virtualisation](#iv-Les%20types%20de%20virtualisation)
+- [I. Qu'est ce que la virtualisation ?](#i-quest-ce-que-la-virtualisation-)
+- [II. Pourquoi virtualiser ?](#ii-pourquoi-virtualiser-)
+  - [Est-il possible de tous virtualiser ?](#est-il-possible-de-tout-virtualiser-)
+- [III. Comment ça fonctionne ?](#iii-comment-ça-fonctionne-)
+- [IV. Les types de virtualisation](#iv-les-types-de-virtualisation)
+  - [La virtualisation de serveur](#la-virtualisation-de-serveur)
+  - [La virtualisation de poste de travail](#la-virtualisation-de-poste-de-travail)
+  - [La virtualisation logicielle](#la-virtualisation-logicielle)
+  - [La virtualisation du réseau](#la-virtualisation-du-réseau)
+  - [La virtualisation des données](#la-virtualisation-des-données)
+  - [Les hyperviseurs](#les-hyperviseurs)
 
 
 # I. Qu'est ce que la virtualisation ?
@@ -39,7 +46,9 @@ Objectifs de la virtualisation :
 
 **Environnement de test et préproduction** : cela contribue aussi à l’amélioration du niveau de service. Ces environnements sont souvent utilisé afin de **tester** et **jouer** les mises à jours ou autres changements avant de mettre en production.
 
-### Est-il possible de tout virtualiser ?
+---
+
+## Est-il possible de tout virtualiser ?
 
 Techniquement, il est aujourd’hui possible de virtualiser la très grande majorité des serveurs en sachant que VMware peut apporter de l’aide dans les cas de serveurs à priori plus difficiles à virtualiser.
 
@@ -95,7 +104,7 @@ Il existe plusieurs types de virtualisation :
 - La virtualisation du réseau
 - La virtualisation des données
 
-### La virtualisation de serveur
+## La virtualisation de serveur
 
 La virtualisation des serveurs permet à plusieurs systèmes d'exploitation de s'exécuter sur un seul serveur d'hébergement.
 
@@ -108,7 +117,7 @@ La virtualisation des serveurs permet à plusieurs systèmes d'exploitation de s
 
 Dans la virtualisation de serveur, les ressources du serveur physique sont abstraites de manière logique pour créer et exécuter des machines virtuelles. (ESXi, KVM, Hyper-V).
 
-### La virtualisation de poste de travail
+## La virtualisation de poste de travail
 
 La virtualisation des postes de travail est un concept dans lequel **les environnements de bureau sont fournis de manière centralisée** et accessibles via un réseau. Ainsi cela permet de simplifier l’informatique des l'utilisateurs finals.
 
@@ -139,9 +148,7 @@ Dans le cas du **Streaming d'OS**, le système démarre à partir d'un disque in
 
 Exemple de produit sur le marché : VMware ThinApp, Citrix Provisionning Server, HP Neoware Image Manager
 
----
-
-### La virtualisation logicielle
+## La virtualisation logicielle
 
 La virtualisation des applications est l’abstraction d’applications individuelles du système d’exploitation sous-jacent.
 
@@ -155,7 +162,7 @@ VMware ThinApp permet par exemple de convertir les fichiers du package Windows I
 |En isolant l’application, le système sous-jacent est protégé des codes malveillants.|La virtualisation des applications soulève des questions de licence.|
 |Le logiciel peut être retiré du système sans restes.||
 
-### La virtualisation du réseau
+## La virtualisation du réseau
 
 La virtualisation du réseau implique diverses approches qui abstraient les ressources réseau aux niveaux matériel et logiciel à partir de leur fondement physique. En règle générale, ce type de virtualisation est utilisé dans le cadre de concepts de sécurité.
 
@@ -178,7 +185,7 @@ Un autre exemple de virtualisation de réseau est **le réseau local virtuel (VL
 |Les ressources réseau peuvent être gérées à un niveau virtuel de manière centralisée, elles sont facilement évolutives et sont réparties dynamiquement.|Une infrastructure de réseau physique redondante peut être nécessaire pour assurer une certaine fiabilité.|
 |La virtualisation du réseau offre différentes approches qui permettent de mettre en œuvre des concepts de sécurité pour le réseau du côté logiciel et donc de manière plus rentable.||
 
-### La virtualisation des données
+## La virtualisation des données
 
 La virtualisation des données est courant. Cela dépend du type de stockage et du fournisseur. La virtualisation du stockage permet de regrouper plusieurs disques de stockage physiques dans un stockage logique unique et il sera présenté comme un stockage unique à tous les serveurs.
 
@@ -232,7 +239,7 @@ Les fournisseurs de solutions renommés pour la virtualisation du stockage sont 
 |Les ressources physiques de stockage combinées dans un lecteur logique peuvent être gérées de manière centralisée.||
 |Les ressources de stockage physique peuvent être étendues et restructurées indépendamment du pool de stockage virtuel.||
 
-### Les hyperviseurs
+## Les hyperviseurs
 
 L'hyperviseur est un processus qui crée et exécute des machines virtuelles. Il permet à un serveur physique d'héberger plusieurs machines virtuelles en partageant des ressources matérielles telles que CPU, mémoire, GPU, réseau, etc. L'hyperviseur est également appelé Virtual Machine Monitor (VMM). Il s'assure que ces VM n'interfèrent pas l'une avec l'autre.
 
