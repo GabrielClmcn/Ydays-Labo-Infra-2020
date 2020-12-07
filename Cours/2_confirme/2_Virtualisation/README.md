@@ -2,6 +2,7 @@
 - [I. Qu'est ce que la virtualisation ?](#i-quest-ce-que-la-virtualisation-)
 - [II. Pourquoi virtualiser ?](#ii-pourquoi-virtualiser-)
   - [Est-il possible de tous virtualiser ?](#est-il-possible-de-tout-virtualiser-)
+  - [Les résultats attendus](#les-résultats-attendus)
 - [III. Comment ça fonctionne ?](#iii-comment-ça-fonctionne-)
 - [IV. Les types de virtualisation](#iv-les-types-de-virtualisation)
   - [La virtualisation de serveur](#la-virtualisation-de-serveur)
@@ -46,8 +47,6 @@ Objectifs de la virtualisation :
 
 **Environnement de test et préproduction** : cela contribue aussi à l’amélioration du niveau de service. Ces environnements sont souvent utilisé afin de **tester** et **jouer** les mises à jours ou autres changements avant de mettre en production.
 
----
-
 ## Est-il possible de tout virtualiser ?
 
 Techniquement, il est aujourd’hui possible de virtualiser la très grande majorité des serveurs en sachant que VMware peut apporter de l’aide dans les cas de serveurs à priori plus difficiles à virtualiser.
@@ -72,7 +71,7 @@ Les **moins bons** pour être virtualiser :
 
 - Les serveurs ayant des **périphériques spéciaux** non validés dans la liste de compatibilité des serveurs avec : **cartes fax**, d’acquisitions numérique ou de montages vidéo, cartes sons, modem, port parallèles ou Dongle. Il est cependant possible de demander un développement spécial de drivers à VMware si cela est nécessaires. Ou passer par la communauté.
 
-### Les résultats attendus
+## Les résultats attendus
 
 **Pour l’entreprise dans son ensemble** : c’est un investissement pour le futur. L’objectif pour une entreprise est de **rester compétitive** face à la concurrence et de pouvoir **adapter son Système d’Information** rapidement en cas de rachat, de fusion/acquisition ou de création de nouvelles entités. Cela peut entrer dans une **démarche Green IT**.
 
