@@ -8,7 +8,7 @@ D'autres part, si vous pouvez monter de la **Haute Disponibilité sur le stockag
 
 Le tp est organisé par groupe de **2 personnes** par rendu. D'autre part, il est réparti sur 2 séances. Le TP demande beaucoup de ressource une fois l'architecture monté. Dans le cas où vous n'avez pas beaucoup de ressources, il est possible de monter le TP sur 2 machines en bridge. 
 
-Ex : la partie stockage sur un PC et l'ESXi sur l'autre puis interconnecté le tout.
+>Ex : la partie stockage sur un PC et l'ESXi sur l'autre puis interconnecté le tout.
 
 Enfin, vous pouvez ajouter de la valeur en montrer des qualités supplémentaires au lab. Par exemple si vous monitorez le tout ou que vous ajoutez des fonctionnalités de sécurité cela sera valorisé.
 
