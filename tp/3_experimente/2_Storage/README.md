@@ -10,7 +10,7 @@ Le tp est organisé par groupe de **2 personnes** par rendu. D'autre part, il es
 
 >Ex : la partie stockage sur un PC et l'ESXi sur l'autre puis interconnecté le tout.
 
-Enfin, vous pouvez ajouter de la valeur en montrer des qualités supplémentaires au lab. Par exemple si vous monitorez le tout ou que vous ajoutez des fonctionnalités de sécurité cela sera valorisé.
+Enfin, vous pouvez ajouter de la valeur en montant des qualités supplémentaires au lab. Par exemple, si vous monitorez le tout ou que vous ajoutez des fonctionnalités de sécurité cela sera valorisé.
 
 N’oubliez pas dans le compte-rendu de notifié quand le produit fonctionne mais aussi les problèmes et erreurs que vous avez pu rencontrer lors du déroulement de votre tp. 
 
