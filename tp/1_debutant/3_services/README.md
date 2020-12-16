@@ -1,4 +1,4 @@
-# TP 2 - Services
+# TP 3 - Services
 
 Tous les points avec un 👀 doivent figurer sur votre rendu.  
 Avant de nous poser une question, avez-vous cherché sur le web ?  
@@ -25,7 +25,7 @@ yum update -y
 
 ## Sommaire
 
-- [TP 2 - Services](#tp-2---services)
+- [TP 3 - Services](#tp-2---services)
 - [Sommaire](#sommaire)
 - [Vue globale de l'infra](#vue-globale-de-l'infra)
 - [Réseau MGMT](#Réseau-mgmt)
