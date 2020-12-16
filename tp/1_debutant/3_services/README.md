@@ -1,4 +1,4 @@
-# TP 3 - Services
+# TP 2 - Services
 
 Tous les points avec un 👀 doivent figurer sur votre rendu.  
 Avant de nous poser une question, avez-vous cherché sur le web ?  
@@ -32,12 +32,15 @@ yum update -y
 - [Serveur DHCP](#serveur-DHCP)
   - [Installation d'un serveur DHCP](#installation-d'un-serveur-dhcp)
   - [Configuration du serveur DHCP](#configuration-du-serveur-dhcp)
-- [Serveur DNS](#serveur-dns)
+  - [Vérfication DHCP](###-Vérification-dhcp)
+- [Serveur DNS](##serveur-dns)
   - [Installation d'un serveur DNS](#installation-d'un-serveur-dns)
   - [Configuration du serveur DNS](#configuration-du-serveur-dns)
-- [Serveur FTP](#serveur-ftp)
-  - [Installation d'un serveur FTP](#installation-d'un-serveur-ftp)
-  - [Configuration du serveur FTP](#configuration-du-serveur-ftp)
+  - [Vérfication DNS](###-Vérification-dns)
+- [Serveur FTP](##-serveur-ftp)
+  - [Installation d'un serveur FTP](###-installation-d'un-serveur-ftp)
+  - [Configuration du serveur FTP](###-configuration-du-serveur-ftp)
+  - [Vérfication FTP](###-Vérification-ftp)
 
 ## Vue globale de l'infra
 
@@ -56,72 +59,80 @@ Votre infrastructure se composera de **trois serveurs** et de **deux clients**.
 
 ## Serveur DHCP
 
-- Attribuer une adresse IP statique à cette machine sur les réseaux local
+- Attribuer une adresse IP statique à cette machine sur les réseaux mgmt et local.
 - Réaliser une connexion `SSH` sur votre machine sur le réseau de mgmt et travailler depuis cette connexion.
-- Modifier le `hostname` de cette machine par un nom explicite la concernant (Tip : Ca pourrait vous être utile pour le DNS, on dit ça, on dit rien)
+- Modifier le [`hostname`](https://www.geeksforgeeks.org/hostname-command-in-linux-with-examples/) de cette machine par un nom explicite la concernant (Tip : Ca pourrait vous être utile pour le DNS, on dit ça, on dit rien)
 
-👀 Quelle **range d'adresses IP allez vous utiliser** dans votre réseau ?
+👀 Quelle **range d'adresses IP DHCP allez vous utiliser** dans votre réseau local ?  
 ⚠ Attention vous savez des choses à propos de ça, pensez-y ⚠
 
-## Installation du service DHCP
+### Installation du service DHCP
 
 - Installer les paquets `dhcp` et `bind-utils`.
 - 👀 Désactiver la carte NAT. Expliquer pourquoi.
-- 👀 Vérifier si le service `dhcp` est actif, sinon lancer le et rendre son démarrage permanent à l'aide de `systemctl`.
 
-## Configuration du serveur DHCP
+### Configuration du serveur DHCP
 
 - 👀 Réaliser la configuration du service, fournissez nous en copiant collant le contenu des fichiers de conf ci-dessous :
 
 `/etc/sysconfig/dhcpd`  
 `/etc/dhcp/dhcpd.conf`
 
-- Récupérer une adresse IP à l'aide de votre serveur `DHCP` respectivement sur vos deux machines clientes.
+- 👀 Vérifier si le service `dhcp` est actif, sinon lancez le et rendre son démarrage permanent à l'aide de `systemctl`.
 
 > The internet is your friend.
 
+### Vérification DHCP
+
 👀 :
 
-- Montrer les adresses IP qui ont été attribués à vos machines clientes
-- Quelle commande utiliser pour récupérer une adresse IP de votre serveur DHCP ?
+- Récupérer une adresse IP à l'aide de votre serveur `DHCP` sur vos deux machines clientes.
+- Montrer les adresses IP qui ont été attribués à vos machines clientes.
+- Quelle commande avez vous utiliser pour récupérer une adresse IP de votre serveur `DHCP` ?
 - Quelle est la commande utilisée pour libérer votre interface de l'adresse IP qui lui est attribuée ?
 
 ---
 
 ## Serveur DNS
 
-- Attribuer une adresse IP statique à cette machine sur les réseaux de mgmt et local
+- Attribuer une adresse IP statique à cette machine sur les réseaux de mgmt et local.
 - Réaliser une connexion `SSH` sur votre machine sur le réseau de mgmt et travailler depuis cette connexion.
-- Modifier le `hostname` de cette machine par un nom explicite la concernant
+- Modifier le `hostname` de cette machine par un nom explicite la concernant.
+- Modifier le `hostname` de la machine `FTP` par un nom explicite la concernant.
 
-## Installation d'un serveur DNS
+### Installation d'un serveur DNS
 
 - Installer le paquet `bind` et `bind-utils`.
-- Désactiver la carte NAT
+- Désactiver la carte NAT.
 
-## Configuration du serveur DNS
+### Configuration du serveur DNS
 
-L'un des fichiers de configuration de votre serveur DNS se trouve ici, à vous de nous dire où se trouve les deux autres :
+Les fichiers de configuration de votre serveur DNS se trouvent ici :
 
-Donner pour nom à votre DNS : `labo-infra.local`
+- `/etc/named.conf`
+- `/var/named/lab-infra.local.db`
+- `/var/named/10.10.20.db`
 
-`/etc/named.conf`
+> Certain d'entre eux sont à créer.
 
-- 👀 Créer une zone direct
-- 👀 Créer une zone inversé
-
-Une fois votre configuration terminer :
-
-- Démarrer le service `named` et rendre son démarrage permanent.
+- 👀 Assigner le nom `lab-infra.local` comme domaine DNS dans le fichier `/etc/named.conf`. ⚠ **Il y a d'autres configurations à réaliser dans ce fichier.** ⚠
+- 👀 Créer une zone direct. Cette zone est à créer dans le fichier `lab-infra.local.db`.
+- 👀 Créer une zone inversé. Cette zone est à créer dans le fichier `10.10.20.db`.
 
 > The internet is your BEST friend.
 
+Une fois votre configuration terminer :
+
+- Vérifier si le service `named` est actif, sinon lancer le et rendre son démarrage permanent.
+
+### Vérification DNS
+
 👀 :
 
-- Réaliser un dig depuis votre serveur `DHCP` vers votre serveur `DNS` et `FTP`.
-- Réaliser un ping avec le nom `DHCP` attribué à vos machines `DNS` et `FTP`.
-- Réaliser un dig depuis votre serveur `DNS` vers votre serveur `DHCP` et `FTP`.
-- Réaliser un ping avec le nom DNS attribué à vos machines `DHCP` et `FTP`.
+- Réaliser un dig depuis votre serveur `DHCP` vers vos serveurs `DNS` et `FTP`.
+- Réaliser un ping depuis votre serveur `DHCP` avec le nom `DNS` attribué à vos machines `DNS` et `FTP`.
+- Réaliser un dig depuis votre serveur `DNS` vers vos serveur `DHCP` et `FTP`.
+- Réaliser un ping depuis votre serveur `DNS` avec le nom `DNS` attribué à vos machines `DHCP` et `FTP`.
 
 Tiens ? Ca ne fonctionne pas ? :) Retenter en arrêtant le daemon `firewalld`. Ca va mieux n'est-ce pas ? Ne le dites surtout pas mais notre prochain cours portera peut-être dessus 😉
 
@@ -131,27 +142,35 @@ Tiens ? Ca ne fonctionne pas ? :) Retenter en arrêtant le daemon `firewalld`. C
 
 - Attribuer une adresse IP statique à cette machine sur les réseaux de mgmt et local
 - Réaliser une connexion `SSH` sur votre machine sur le réseau de mgmt et travailler depuis cette connexion.
-- Modifier le `hostname` de cette machine par un nom explicite la concernant
 
-## Installation d'un serveur FTP
+### Installation d'un serveur FTP
 
-- Installer le paquet **proftpd**.
-- Activer et démarrer le service à l'aide de **systemctl**.
+- Installer le paquet `epel-release`. Une fois fait, vous pouvez installer le paquet `proftpd`.
+- 👀 Vérifier si le service est actif, sinon lancer le et rendre son démarrage permanent.
 
-## Configuration du serveur FTP
+### Configuration du serveur FTP
 
 👀 Réaliser la configuration du serveur FTP.
 
-- 👀 L'utilisateur Anonmous et root, n'ont pas le droit de se connecter.
-- 👀 Resteindre l'accès au serveur à `/tmp/ftpfiles/`
+- Les fichiers que vous avez à modifier sont `/etc/proftpd.conf` et `/etc/ftpusers`.
+- 👀 L'utilisateur `Anonymous` et `root`, n'ont pas le droit de se connecter.
+- Faire un `touch file` dans `~/` et la même chose dans `/root/`.
+- Créer un dossier `ftpFiles/` dans `/tmp/`
+- 👀 Resteindre l'accès au serveur à `/tmp/ftpfiles/` prouver le avec le fichier de configuration `proftpd.conf`.
+- Redémarrer le service.
 
 > You're living a real love story with the internet, it's really beautiful to see that. A real couple goal :heart:
 
+### Vérification FTP
+
 👀 :
 
-- Sur Client 1 créer un fichier et écriver "hello" dans un fichier.
-- Envoyer ce fichier sur le serveur FTP afin que Client 2 puisse le récupérer.
-- Prouver qu'Anonymous et root ne peuvent pas se connecter au serveur
+- Afin que la machine `Client 1` et `Client 2` puissent se connecter au serveur `FTP` il vous faudra sur chacun d'elles installer le paquet `lftp`.
+- Sur `Client 1` créer un fichier et écriver "hello" à l'intérieur.
+- Envoyer ce fichier sur le serveur `FTP` afin que `Client 2` puisse le récupérer, le modifié et enfin le renvoyé sur le serveur `FTP`.
+- Afficher le fichier modifié depuis `Client1`.
+- Prouver qu'`Anonymous` et l'utilisateur `root` ne peuvent pas se connecter au serveur `FTP`.
+- Resteindre l'accès au serveur à `/tmp/ftpfiles/`
 - Répertorier les commandes que vous avez utilisés pour réaliser ces actions.
 
 ---
