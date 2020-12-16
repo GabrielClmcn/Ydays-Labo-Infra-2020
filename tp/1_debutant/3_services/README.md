@@ -46,7 +46,7 @@ yum update -y
 
 Votre infrastructure se composera de **trois serveurs** et de **deux clients**.
 
-- Le **serveur DHCP** permet de **d'attribuer des adresses IP** aux clients.
+- Le **serveur DHCP** permet **d'attribuer des adresses IP** aux clients.
 - Le **serveur DNS** permet de **résoudre le nom de domaine** attribué à vos machines.
 - Le **serveur FTP** permet **d'échanger des fichiers** entre différentes machines.
 
