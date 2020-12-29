@@ -28,7 +28,7 @@ Pour ce TP il vous faut :
 
 ## Iptables
 
-Iptables est logiciel libre permettant de configurer les tables de sécurité, du pare-feu du noyau Linux.
+Iptables est un logiciel libre permettant de configurer les tables de sécurité, du pare-feu du noyau Linux.
 
 Explication des chaînes standard **INPUT, FORWARD et OUTPUT**:
 
