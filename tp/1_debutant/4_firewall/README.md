@@ -66,7 +66,7 @@ Afin de vous faciliter la tâche, ainsi que pour vous montrer à quoi doivent re
 - Ajouter ces règles après avoir ajouté toutes vos autres règles :
   - `sudo iptables -A INPUT -m comment --comment "REJECT UNAUTHORIZED CONNEXIONS" -j REJECT --reject-with icmp-host-prohibited`
   - `sudo iptables -A OUTPUT -m comment --comment "REJECT UNAUTHORIZED CONNEXIONS" -j REJECT --reject-with icmp-host-prohibited`
-- 👀 **DROP**er vos 3 chaînes.
+- 👀 **DROP**er les 3 chaînes standard.
 - 👀 Prouver que vos services **DHCP, DNS et FTP** fonctionnent toujours.
 
 ## Serveur NFS
