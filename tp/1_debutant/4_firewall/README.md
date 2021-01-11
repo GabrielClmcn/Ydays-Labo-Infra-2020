@@ -53,7 +53,7 @@ Explications des options utilisées dans les commandes ci-dessous :
 
 ## Installation et configuration Iptables
 
-Etant donné que vous utiliserez **Iptables**, vous n'aurez pas besoin de **Firewalld**, de ce fait désactiver le.
+Etant donné que vous utiliserez **Iptables**, vous n'aurez pas besoin de **Firewalld**, de ce fait désactiver le (vous trouverez la marche à suivre sur Internet).
 
 Vous trouverez dans le lien ci-dessous, toutes les informations nécessaire à sa compréhension (nous ne verrons ici que les 3 chaînes standard) : <https://doc.ubuntu-fr.org/iptables>
 
