@@ -4,10 +4,10 @@ Ce projet à pour but de prendre en main une infrastructure de virtualisation. D
 L'objectif est de vous présenter les différentes fonctionnalité que cette infrastructure peut proposer.
 
 - [0. Setup](#0-setup)
-- [1. Mise en place de l'hyperviseur](#0-setup)
-- [2. Mise en place du stockage](#0-setup)
-- [3. Configuration iSCSI](#0-setup)
-- [4. Rendu](#0-setup)
+- [1. Mise en place de l'hyperviseur](#1-mise-en-place-de-lhyperviseur)
+- [2. Mise en place du stockage](#2-mise-en-place-du-stockage)
+- [3. Configuration iSCSI](#3-configuration-iscsi)
+- [4. Rendu](#4-rendu)
 
 ## 0. Setup
 
