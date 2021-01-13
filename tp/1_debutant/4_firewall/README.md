@@ -38,6 +38,7 @@ Explication des chaînes standard **INPUT, FORWARD et OUTPUT**:
 
 Explications des options utilisées dans les commandes ci-dessous :
 
+- -A : Ajoute une ou plusieurs règles à la fin de la chaîne spécifiée.
 - -i : Nom de l'interface qui reçoit les paquets
 - -p : Protocole de la règle ou du paquet à vérifier.
 - -m : permet d'ajouter un module additionnel.
@@ -51,6 +52,8 @@ Explications des options utilisées dans les commandes ci-dessous :
 - --reject-with icmp-host-prohibited : Message de rejet avec lequel le paquet est rejeté. Cela signifie que votre machine informera l'expéditeur que le paquet a été rejeté avec ce message.
 
 ## Installation et configuration Iptables
+
+Etant donné que vous utiliserez **Iptables**, vous n'aurez pas besoin de **Firewalld**, de ce fait désactiver le (vous trouverez la marche à suivre sur Internet).
 
 Vous trouverez dans le lien ci-dessous, toutes les informations nécessaire à sa compréhension (nous ne verrons ici que les 3 chaînes standard) : <https://doc.ubuntu-fr.org/iptables>
 
