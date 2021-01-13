@@ -47,7 +47,7 @@ La topologie est la suivant :
 2. Créer un LUN
 3. Connecter l'esx à son stockage distant
 4. Créer un nouveau datastore puis une VM Windows depuis ce datastore
-5. Télécharger [CrystalDiskMark](https://osdn.net/projects/crystaldiskmark/downloads/73958/CrystalDiskMark8_0_1.exe/) sur le windows. CrytalDiskMark permet de mesurer la vitesse de tranfers des données sur les médias tel que les HDD, les SSD, les clé USB, etc... 
+5. Télécharger [CrystalDiskMark](https://osdn.net/projects/crystaldiskmark/downloads/73958/CrystalDiskMark8_0_1.exe/) sur le windows. CrytalDiskMark permet de mesurer la vitesse de tranfert des données sur les médias tel que les HDD, les SSD, les clé USB, etc... 
 6. Pendant le benchmark avec CrystalDiskMark, casser un disque du RAID. Que remarquer vous ?
 
 ## 4. Rendu
