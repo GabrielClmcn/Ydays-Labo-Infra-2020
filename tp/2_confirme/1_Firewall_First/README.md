@@ -55,6 +55,17 @@ La topologie est la suivant :
 ## 6. Rendu
 Présentation avec démonstration avec votre binôme.
 
+Barème :
+
+- Oral:
+  - **Présentation /7**
+    - Qualité du support /2
+    - Gestion du temps /1
+    - Posture professionnelle /1
+    - Contenu /3
+  - **Démonstration /5**
+  - **Question-Réponse /8**
+
 ---
 
 Enjoy 🎉

@@ -53,6 +53,17 @@ La topologie est la suivant :
 ## 4. Rendu
 Explication théorique et de comment vous avez fait + démonstration du HA RAID
 
+Barème :
+
+- Oral:
+  - **Présentation /7**
+    - Qualité du support /2
+    - Gestion du temps /1
+    - Posture professionnelle /1
+    - Contenu /3
+  - **Démonstration /5**
+  - **Question-Réponse /8**
+
 ---
 
 Enjoy 🎉
