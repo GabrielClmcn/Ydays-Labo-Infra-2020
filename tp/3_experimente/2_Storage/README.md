@@ -4,10 +4,12 @@ Ce TP a pour but de prendre en main une infrastructure de virtualisation avec un
 
 L'objectif est de vous présenter les différentes fonctionnalités et technologies que cette infrastructure peut proposer.
 
-- [1. Choix de la technologie de stockage](#1-choix-de-la-technologie-de-stockage)
-- [2. Mise en place du stockage](#2-mise-en-place-du-stockage)
-- [3. Mise en fonctionnement avec l'ESXi](#3-mise-en-fonctionnement-avec-lesxi)
-- [4. Rendu](#4-rendu)
+### Sommaire
+
+[1. Choix de la technologie de stockage](#1-choix-de-la-technologie-de-stockage)
+[2. Mise en place du stockage](#2-mise-en-place-du-stockage)
+[3. Mise en fonctionnement avec l'ESXi](#3-mise-en-fonctionnement-avec-lesxi)
+[4. Rendu](#4-rendu)
 
 Le TP est organisé par groupe de **2 personnes** par rendu. D'autre part, il est réparti sur 2 séances. Le TP demande beaucoup de ressource une fois l'architecture montée. Dans le cas où vous n'avez pas beaucoup de ressources, il est possible de monter le TP sur 2 machines en bridge. 
 
@@ -42,11 +44,11 @@ D'autre part, une infrastructure de stockage disposant de réplication (dans le 
 2. Quel type de format et protocoles de stockages utilisés ?
 3. Expliquez le plan d'adressage et les points importants qui doivent être soulignés et mis en place. Si besoin expliqué avec un schéma ou un tableau d'adressage complémentaire. 
 4. Certains points seront particulièrement étudiés :
-- Possibilité de HA
-- Disques RAID
-- Interfaces HeartBeat, Witness
-- Multipathing
-- Etc,...
+  - Possibilité de HA
+  - Disques RAID
+  - Interfaces HeartBeat, Witness
+  - Multipathing
+  - Etc,...
 
 ## 2. Mise en place du stockage
 
@@ -65,7 +67,7 @@ Cela demande beaucoup de recherche, de pratique et de test. Choisissez bien votr
 ## 4. Rendu
 
 - Compte-rendu papier à rendre avant le **Dimanche 24 Janvier à 23h59**
-- Présentation **orale 20 min** par groupe (10 min présentation techno et démo. 10min question)
+- Présentation **orale 20 min** par groupe (10 min présentation techno et démo. 10min question), le **Mercredi 27 Janvier**
 
 N’oubliez pas dans le compte-rendu de notifier quand le produit fonctionne, mais aussi les problèmes et erreurs que vous avez pu rencontrer lors du déroulement de votre TP. 
 
