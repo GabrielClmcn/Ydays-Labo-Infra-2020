@@ -6,10 +6,10 @@ L'objectif est de vous présenter les différentes fonctionnalités et technolog
 
 ### Sommaire
 
-[1. Choix de la technologie de stockage](#1-choix-de-la-technologie-de-stockage)
-[2. Mise en place du stockage](#2-mise-en-place-du-stockage)
-[3. Mise en fonctionnement avec l'ESXi](#3-mise-en-fonctionnement-avec-lesxi)
-[4. Rendu](#4-rendu)
+[1. Choix de la technologie de stockage](#1-choix-de-la-technologie-de-stockage)  
+[2. Mise en place du stockage](#2-mise-en-place-du-stockage)  
+[3. Mise en fonctionnement avec l'ESXi](#3-mise-en-fonctionnement-avec-lesxi)  
+[4. Rendu](#4-rendu)  
 
 Le TP est organisé par groupe de **2 personnes** par rendu. D'autre part, il est réparti sur 2 séances. Le TP demande beaucoup de ressource une fois l'architecture montée. Dans le cas où vous n'avez pas beaucoup de ressources, il est possible de monter le TP sur 2 machines en bridge. 
 
@@ -44,11 +44,11 @@ D'autre part, une infrastructure de stockage disposant de réplication (dans le 
 2. Quel type de format et protocoles de stockages utilisés ?
 3. Expliquez le plan d'adressage et les points importants qui doivent être soulignés et mis en place. Si besoin expliqué avec un schéma ou un tableau d'adressage complémentaire. 
 4. Certains points seront particulièrement étudiés :
-  - Possibilité de HA
-  - Disques RAID
-  - Interfaces HeartBeat, Witness
-  - Multipathing
-  - Etc,...
+    - Possibilité de HA
+    - Disques RAID
+    - Interfaces HeartBeat, Witness
+    - Multipathing
+    - Etc,...
 
 ## 2. Mise en place du stockage
 
